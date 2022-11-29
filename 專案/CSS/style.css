@@ -1,0 +1,503 @@
+
+/*版面設定*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    transition: 0.4s all linear;
+    font-size: 22px;
+}
+
+/* 第一區header */
+#menu-bar {
+    line-height: 45.83px;
+}
+
+
+header {
+
+    font-size: 20px;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    padding: 10px;
+    background: rgb(255, 208, 0);
+    box-shadow: 10px 1rem 1rem rgba(0, 0, 0, 0.1);
+    opacity: 0,9;
+}
+
+header img {
+    width: 50px;
+    height: 40px;
+    padding-bottom: -10px;
+    filter: saturate(8);
+}
+
+header .navbar a {
+    font-size: 22px;
+    font-weight: normal;
+    color: rgb(9, 152, 152);
+    padding-left: 10px;
+}
+
+header .logo {
+    font-size: 25px;
+    font-weight: normal;
+    color: rgb(9, 152, 152);
+}
+
+header .navbar a:hover {
+    font-size: 22px;
+    font-weight: 900;
+    color: rgb(0, 157, 50);
+    margin-left: 10px;
+    transition: 1s;
+    background-color: white;
+    padding: 18px 10px;
+}
+
+
+/* 第二區首頁 */
+
+
+section {
+    padding: 10px;
+}
+
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    min-height: 500px;
+    align-items: center;
+    background: url(../images/background3.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content {
+    flex: 1 1 30px;
+    margin-top: 60px;
+    padding: 50px;
+    background: rgba(185, 239, 230, 0.5);
+
+}
+
+.home .content h3 {
+    font-size: 53px;
+    color: rgba(10, 86, 15, 0.829);
+}
+
+.home .content p {
+    font-size: 20px;
+    color: rgb(10, 63, 49);
+    padding: 10px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.btn {
+    padding: 20px;
+    border: 3px solid rgb(255, 100, 189);
+    color: white;
+    font-size: 25px;
+    border-radius: 10px;
+    /* z-index: 0; */
+}
+
+.btn:hover {
+    background-color: chocolate;
+    color: white;
+    box-shadow: inset 200px 0 0 0 chocolate;
+    transition: 1.5s all;
+}
+
+.home img {
+    flex: 1 1 30px;
+    width: 500px;
+    animation: moving 1s linear infinite;
+}
+
+/* 圖片會左右移動 */
+@keyframes moving {
+    0%{transform: translate(0rem);}
+    50%{transform: translate(3rem);}
+    100%{transform: translate(0rem);}
+}
+
+/* 第三區料理 */
+
+.heading {
+    text-align: center;
+    font-size: 30px;
+    color: rgb(9, 152, 152);
+    padding: 30px;
+}
+
+.heading span {
+    color: chocolate;
+    font-size: 30px;
+}
+
+.category .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.category .box-container .box {
+    flex: 1 1 30px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 10px black;
+    border: 1px solid black;
+    cursor: pointer;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+.category .box-container .box .image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; 
+    /* 圖片維持原本的比例放大到寬高兩邊都至少滿版為止 */
+    position: absolute;
+    top: 0%;
+    left: -100%;
+}
+
+.category .box-container .box .content {
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    padding: 10px;
+    height: 250px;
+    background-color: rgb(255, 208, 0);
+}
+
+.category .box-container .box .content img {
+    width: 180px;
+    height: 120px;
+    margin: 10px;
+}
+
+.category .box-container .box .content h3 {
+    font-size: 20px;
+    color: black
+}
+
+.category .box-container .box .content p {
+    font-size: 20px;
+    color: black
+}
+
+.category .box-container .box:hover .image {
+    left: 0%;
+}
+
+.category .box-container .box:hover .content {
+    transform: translate(100%);
+}
+
+
+/* 第四區菜單 */
+
+.menu .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.menu .box-container .box {
+    flex: 1 1 10px;
+    padding: 10px;
+    box-shadow: 5px 5px 5px rgb(140, 140, 140);
+    border: 1px solid rgb(118, 118, 118);
+    background: url(../images/background2.jpg) no-repeat;
+    background-size: cover;
+    border-radius: 20px;
+    padding-bottom: 30px;
+    height: 500px;
+}
+
+.menu .box-container .box img {
+    height: 300px;
+    object-fit: cover;
+    width: 100%;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+
+.menu .box-container .box .price {
+    font-weight: bold;
+    font-size: 40px;
+    color: rgb(255, 255, 255);
+    background: chocolate;
+    padding: 10px 60px;
+    opacity: 0.8;
+    /* 價格會飄浮起來 */
+    position: absolute;
+}
+
+.menu .box-container .box h3 {
+    color: white;
+    font-size: 30px;
+    padding: 10px 40px;
+    text-align: center;
+    background: rgb(9,9,55);
+}
+
+.menu .box-container .box .stars {
+    color: chocolate;
+    font-size: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu .box-container .box .btn2 {
+    font-size: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    color: chocolate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid chocolate;
+}
+
+.menu .box-container .box .btn2:hover{
+    background-color: chocolate;
+    color: white;
+    box-shadow: 400px 0 0 0 chocolate inset ;
+    transition: 1s all;
+}
+
+
+.menu .box-container .box .icons {
+    display: flex;
+    flex-direction: column;
+    color: rgb(9, 152, 152);
+    position: relative;
+    top: -80%;
+    left: -1300%;
+    transform: translate(-50% , -50%);
+    transition: 1s;
+    z-index: 1;
+
+}
+
+.menu .box-container .box:hover .icons {
+        left: 130%;
+        opacity: 1;
+}
+
+.menu .box-container .box .icons a {
+    padding: 10px;
+    width: 47px;
+    line-height: 10px;
+    font-size: 20px;
+    border: 2px solid chocolate;
+    border-radius: 10px;
+    background-color: white;
+    color: rgb(9, 152, 152);
+    margin-top: 5px;
+    opacity: 0.9;
+}
+
+.menu .box-container .box .icons a:hover {
+    background-color: rgb(255, 208, 0);
+    opacity: 1;
+}
+
+
+
+/* 第五區圖片 */
+
+
+.gallery .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+
+}
+
+.gallery .box-container .box {
+    flex: 1 1 10px;
+    height: 300px;
+    background-color: rgb(255, 208, 0);
+    box-shadow: 5px 5px 5px rgb(140, 140, 140);
+    border: 1px solid rgb(118, 118, 118);
+    border-radius: 20px;
+    /* 做了相對定位 */
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery .box-container .box img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    z-index: 1;
+}
+
+.gallery .box-container .box .content {
+    position: absolute;
+    top: -100%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    padding-top: 20px;
+    text-align: center;
+}
+
+.gallery .box-container .box:hover .content {
+    top: 0;
+    opacity: 0.6;
+    transition: 2s;
+}
+
+.gallery .box-container .box .content h3,p {
+    height: 100px;
+    line-height: 100px;
+    font-size: 30px;
+}
+
+
+
+
+/* 第六區評論 */
+
+.review .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.review .box-container .box {
+    text-align: center;
+    padding: 10px;
+    border: 8px solid white;
+    box-shadow: 5px 5px 5px black;
+    border-radius: 20px;
+    flex: 1 1 20px;
+    background-color: rgb(255, 217, 0);
+    margin-top: 80px;
+}
+
+.review .box-container .box img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 8px solid rgb(9, 152, 152);
+    margin-top: -100px;
+    object-fit: cover;
+}
+
+.review .box-container .box h3 {
+    font-size: 30px;
+    color: chocolate;
+    padding: 10px;
+}
+
+.review .box-container .box .stars i {
+    font-size: 20px;
+    color: rgb(255, 136, 0);
+    padding: 10px;
+}
+
+.review .box-container .box p {
+    font-size: 20px;
+    color: black;
+    padding: 10px;
+}
+
+
+/* 第七區訂購 */
+
+.order .row {
+    padding: 10px;
+    box-shadow: 5px 5px 5px rgb(140, 140, 140);
+    background: white;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    border-radius: 20px;
+}
+
+.order .row .image {
+    flex: 1 1 30px;
+}
+
+.order .row .image img {
+    height: 450px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.order .row form .inputbox input, .order .row form textarea {
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+    color: black;
+    text-transform: none;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+.order .row form textarea {
+    width: 100%;
+    resize: none;
+    height: 220px;
+    margin: 5px;
+}
+
+.order .row form .btn3 {
+    font-size: 30px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 20px;
+    color: chocolate;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 5px solid chocolate;
+}
+
+.order .row form .btn3:hover {
+    background-color: chocolate;
+    color: white;
+    box-shadow: inset 400px 0 0 0 chocolate;
+    transition: 1s all;
+}
+
+
+
+/* 第八區footer */
+.footer {
+    background-color: rgb(205 ,205 ,205);
+    text-align: center;
+}
+
+.footer .social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* RWD手機板 */
